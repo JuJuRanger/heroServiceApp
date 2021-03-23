@@ -32,6 +32,28 @@ dependencies:
   intro_slider: ^2.3.3
   local_auth: ^0.6.3+4
   shared_preferences: ^0.5.12+4
+  http: ^0.12.2
+  fluttertoast: ^7.1.8
+  curved_navigation_bar: ^0.3.7
+  connectivity: ^0.4.9+5
+  intl: ^0.16.0 # Date Format Library
+  url_launcher: ^5.7.8 # Link ไปยังหน้า Website
+  qr_code_scanner: ^0.0.13 # app นี้จะติด error ความเข้ากันได้กันรุ่นเก่าจะเปิดไม่ได้
+  # วิธีแก้ android\app\build.gradle
+  # ปรับ minSdkVersion จาก 16 ให้เป็น 24 (24 คือ android 7 ขั้นไปมั้ง)
+  # ===== นำรูปภาพเข้า QR code =====
+  image_picker_saver: ^0.3.0
+  path_provider: ^1.6.28
+  path: ^1.7.0
+  rxdart: ^0.22.5
+  qr_code_tools: ^0.0.7
+  qr_flutter: ^3.2.0
+  flutter_launcher_icons: ^0.8.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +72,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/
     - assets/images/menu_icon/
     - assets/images/welcome/
     # - images/a_dot_ham.jpeg
@@ -75,6 +98,15 @@ flutter:
           weight: 500
         - asset: assets/fonts/Montserrat-Bold.ttf
           weight: 700
+    - family: Kanit
+      fonts:
+        - asset: assets/fonts/Kanit-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Kanit-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Kanit-Medium.ttf
+          weight: 500
+
           # style: italic
   #   - family: Trajan Pro
   #     fonts:

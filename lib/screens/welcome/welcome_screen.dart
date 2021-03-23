@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomeScreen extends StatefulWidget {
   WelcomeScreen({Key key}) : super(key: key);
@@ -11,9 +12,14 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final introKey = GlobalKey<_WelcomeScreenState>();
 
-  void _onIntroEnd(context) {
+  void _onIntroEnd(context) async {
+    // สร้าง Object แบบ Sharedpreference
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    // เก็บค่าลงตัวแปรแบบ Sharedpreferences
+    sharedPreferences.setInt('appStep', 1);
+
     // เมื่อทำการเรียกไปหน้าสุด และส่งไปหน้า Dashboard
-    Navigator.pushReplacementNamed(context, '/dashboard');
+    Navigator.pushReplacementNamed(context, '/login');
   }
 
   // เรียกทั้งหมดนี้ว่า Onboarding หรือ introduction_screen

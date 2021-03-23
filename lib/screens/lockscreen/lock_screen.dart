@@ -10,15 +10,6 @@ class LockScreen extends StatefulWidget {
 
 class _LockScreenState extends State<LockScreen> {
   int length = 6;
-  onChange(String number) {
-    if (number.length == length) {
-      if (number == '123456') {
-        Navigator.pushReplacementNamed(context, '/dashboard');
-      } else {
-        _showDialog('แจ้งเตือน', 'รหัสผ่านไม่ถูกต้อง');
-      }
-    }
-  }
 
   void _showDialog(title, msg) {
     showDialog(
@@ -61,10 +52,7 @@ class _LockScreenState extends State<LockScreen> {
                 ),
               ),
             ),
-            Numpad(
-              length: length,
-              onChange: onChange,
-            )
+            Numpad(length: length)
           ],
         ),
       ),
